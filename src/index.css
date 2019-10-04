@@ -13,10 +13,26 @@ body {
     justify-content: center;
 }
 
+#imgHome {
+    width: 16em;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+}
+
 #textHome {
     font-family: "Bungee", cursive;
     color: white;
-    font-size: 50px;
+    font-size: 20px;
+    position: absolute;
+    bottom: 20%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
 }
 
 .intro {
@@ -36,13 +52,16 @@ body {
 }
 
 #introBtn {
-    position: fixed;
-    left: 36%;
-    bottom: 10%;
-    font-size: 80px;
-    color: white;
-    text-decoration: none;
     font-family: "Bungee", cursive;
+    color: white;
+    font-size: 26px;
+    position: absolute;
+    bottom: 8%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    text-decoration: none;
 }
 
 .preface {
@@ -57,21 +76,31 @@ body {
 }
 
 #imgPreface {
-    max-width: 20%;
-    height: auto;
-    post: 49%;
-    position: fixed;
-    top: 10%;
-    left: 43%;
+    width: 5em;
+    position: absolute;
+    top: 21%;
+    right: 50%;
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
 }
 
 #textPreface {
-    font-size: 40px;
+    font-size: 12px;
     color: black;
-    text-decoration: none;
     font-family: "Montserrat", sans-serif;
-
-    margin: 3em;
+    margin: 30px;
+    background-color: #dbcdd6;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: justify;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    white-space: pre-wrap;
 }
 
 .scavengerHuntContainer {
@@ -97,7 +126,6 @@ body {
     position: fixed;
     font-family: "Bungee", cursive;
     color: white;
-    osition: absolute;
     position: absolute;
     top: 28%;
     right: 50%;

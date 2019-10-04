@@ -3,28 +3,14 @@ import ReactDOM from "react-dom";
 import Notifications, { notify } from "react-notify-toast";
 import "./index.css";
 import block from "./tekatekikota-gif-transparent.gif";
-
+import Main from "./main.js";
+import Prompt from "./prompt";
 /*
  * TODO: Add JSON Loading for QA
  *
  */
 
-class Prompt extends React.Component {
-    render() {
-        return (
-            <div>
-                <div className="promptHeader">
-                    <h2>{this.props.step} of 18</h2>
-                </div>
-                <div className="promptBody">
-                    <p>{this.props.instructions}</p>
-                </div>
-            </div>
-        );
-    }
-}
-
-class ScavengerHunt extends React.Component {
+export default class ScavengerHunt extends React.Component {
     constructor() {
         super();
         this.prompts = [
@@ -43,9 +29,9 @@ class ScavengerHunt extends React.Component {
             "There are 5 underground prison inside Fatahillah Museum. The prison is located under the building on the inside of the museum park. Semicircular chambers, stuffy and dark. Prison walls are made of concrete wall with iron bars on the front windows. These prisons were used to keep the prisoners before facing the court or the punishment. But a lot of them died, even before the court ruling, due to the condition of the prison that has no windows and proper ventilation. Also, over capacity of people fit inside the prison. Many died for cholera, suffocation, and a lot of other sickness as well.\n\nSome of Indonesian heroes were also prisoners in here, such as Cut Nyak Dien and Pangeran Diponegoro. But due to their high status, they were not jailed in the underground, rather in a special room inside this museum.\n\n***\n\nDo you still remember, \nof the letter L a while ago.\nCome to the exit.\nAnd find the building,\nof the traces you've found before.\nWhere the new one replaced,\nand where the puppet hanged.\n\nWhen you know where it is.\nCome to the fron of the building.\nFace it.\nLook behind.\nFace it again.\n\nHow many windows do I have?\n(2 digits)",
             "The Wayang Museum is a museum dedicated to Indonesian puppetry. The museum building occupies the site of a church which was built in 1640, under the name of the Old Dutch Church (De Oude Hollandsche Kerk). In 1732, the church was renovated and the name was changed into the New Dutch Church (De Nieuwe Hollandsche Kerk).\n\nThe museum has a collection of various kinds of puppet all across Indonesia, such as Javanese, Sundanese, Sumatrans, as well as puppets from other countries as well. Inside the museum is the plate marking the tombstone of Jan Pieterszoon Coen. Puppet theater and a workshop of puppet making are periodically organized in the museum.\n\n***\n\nNow look to the right, walk.\nTurn the first right,\nand walk the alley straight.\nLook right till you find,\na man with a white bucket. \n\nWhat color is inside?\n(3 letters)",
             "This statue and all the other statues around this river are made by Dolorosa Sinaga and her team. This statue alone, a construction painter, was created to capture the spirit of revitalization of old town area.\n\nThere was a debate happening about the revitalization of old town area. Between preserving it like the old days or making it modern and new. Kali Krukut riverside, where you are standing right now is an example of making it modern. The design was similar to South Korean river, Cheonggyecheon stream.\n\nWhich one do you think is better?\n\n***\n\nNow look across the river.\nAnd walk cross the road. \nWalk straight till you see,\nIdols are lining up. In front of the creepy palace.\nNext to where you will find\na numbered structure.\n\nWhat is my number?\n(4 digits)",
-            "Another name for this building was Athena Discotheque. This building was built in between 1925-1927, hench the name. It has two floors, and previously used as a Disco Place in the front and office area in the back.\n\nThe architects were duo Reyerse and W. Selle. Using Art Deco style, this building has wide façades with plenty of vertical windows on the first floor and plenty of ventilation blocks on the second floor. The ventilation blocks functioned as air circulation but only applied on top and low part of the second floor façade to avoid sunlight overexposure.\n\n***\n\nCome even more to the straight front.\nYou will find it shining.\nThere is where I used to sell.\nThe treasure we keep.\n\nAs it tries to stand through,\nand time try to withers.\nOn it you will see.\nThe blood I shed with me.\n\nWhat is it?(2 words, 9 letters)",
+            "Another name for this building was Athena Discotheque. This building was built in between 1925-1927, hench the name. It has two floors, and previously used as a Disco Place in the front and office area in the back.\n\nThe architects were duo Reyerse and W. Selle. Using Art Deco style, this building has wide façades with plenty of vertical windows on the first floor and plenty of ventilation blocks on the second floor. The ventilation blocks functioned as air circulation but only applied on top and low part of the second floor façade to avoid sunlight overexposure.\n\n***\n\nCome even more to the straight front.\nYou will find it shining.\nThere is where I used to sell.\nThe treasure we keep.\n\nAs it tries to stand through,\nand time try to withers.\nOn it you will see.\nThe blood I shed with me.\n\nWhat is it?\n(2 words, 9 letters)",
             "Toko Merah was built in 1730 as the residence of the Governor-General of the Dutch East Indies Gustaaf Willem, Baron van Imhoff (1743-1750) above a 2.471 square meter plot. From 1743 to 1755, the building served as a Navy Academy (Dutch Academie de Marine), reputed to be the oldest navy academy in Asia.\n\nThe building was converted into a hotel from 1786 to 1808. In 1851, the building was purchased by Oey Liauw Kong, Kapitein der Chinezen of Batavia, for use as his residence and shop, and was painted red, and so it was known as Toko Merah. After the nationalization of Dutch companies in 1957, Toko Merah became an office for various state-owned enterprises e.g. PT. Satya Niaga (1972).\n\nToko Merah was the silent witness of the Angke Raid back in Colonial era. Where the Dutch kills the Chinese population of Batavia in fear of domination and criminality. The river in front of the building was red by blood, it was where they threw all the bodies. Up till now, there are stories on how haunted the building is. Where they hear footsteps and people talking inside at night times.\n\n***\n\nCome across the road.\nSay hi to the old man\nwho is reading on the red bench.\nSit next to him.\nTalk to him.\nDo you hear him answering?\n\nNow come cross the river.\nCome through the bridge.\nStop at the end of it.\nLook around.\n\nFind the building above a building\nA beautiful burgundy cupola.\n\nWhat is the color of the roof in the picture?\n(6 letters)",
-            "This is Jasa Raharja office building. It is built around the 19th century. Before it was revitalized, this building was almost collapse, the roof was gone, and had no function, only there were remnants of walls that were empty behind. Once conserved, this building is the same as the old building in terms of facades, while using more modern building technology inside. The pretty shape cloister dome and mosaic of a building on the front top facade wall are the main element which they tried to preserve. One of the prettiest building in this area.\n\n***\n\nI thank for your bravery.\nAs you journey to find the treasure is much near.\nCome follow the mortar and the pestle.\nThrough the hallway.\nOpen the door.\nWe will meet.\nWhere I will wait\n and give you what you seek.\n(4 letters)",
+            "This is Jasa Raharja office building. It is built around the 19th century. Before it was revitalized, this building was almost collapse, the roof was gone, and had no function, only there were remnants of walls that were empty behind. Once conserved, this building is the same as the old building in terms of facades, while using more modern building technology inside. The pretty shape cloister dome and mosaic of a building on the front top facade wall are the main element which they tried to preserve. One of the prettiest building in this area.\n\n***\n\nI thank for your bravery.\nAs you journey to find the treasure is much near.\nCome follow the mortar and the pestle.\nThrough the hallway.\nOpen the door.\nWe will meet.\nWhere I will wait,\nand give you what you seek.\n(4 letters)",
             "Kalau ada sumur di ladang,\nboleh kita menumpang mandi.\n\nKalau ada umur yang panjang,\nboleh kita berjumpa lagi\n"
         ];
         this.answers = [
@@ -139,4 +125,4 @@ class ScavengerHunt extends React.Component {
 }
 // ========================================
 
-ReactDOM.render(<ScavengerHunt />, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
