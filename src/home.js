@@ -21,7 +21,7 @@ export default class Home extends React.Component {
         return (
             <div className="home">
                 <a href="./intro">
-                    <img src={homeImg} id="imgHome" />
+                    <img src={homeImg} alt="Tekatekikota" id="imgHome" />
                 </a>
                 <h1 id="textHome">tap to enter</h1>
             </div>

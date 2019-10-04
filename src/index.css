@@ -179,3 +179,7 @@ body {
     background-color: black;
     color: white;
 }
+
+#notification-wrapper {
+    font-family: "Bungee", cursive;
+}

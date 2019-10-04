@@ -20,7 +20,7 @@ export default class Intro extends React.Component {
     render() {
         return (
             <div className="intro">
-                <img src={introImg} id="imgIntro" />
+                <img src={introImg} alt="Sabeni" id="imgIntro" />
                 <a href="./preface" id="introBtn">
                     Next >>>
                 </a>

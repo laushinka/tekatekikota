@@ -5,10 +5,6 @@ import "./index.css";
 import block from "./tekatekikota-gif-transparent.gif";
 import Main from "./main.js";
 import Prompt from "./prompt";
-/*
- * TODO: Add JSON Loading for QA
- *
- */
 
 export default class ScavengerHunt extends React.Component {
     constructor() {
@@ -110,7 +106,7 @@ export default class ScavengerHunt extends React.Component {
     render() {
         return (
             <div className="scavengerHuntContainer">
-                <Notifications />
+                <Notifications options={{ id: "notifStyle" }} />
                 <img src={block} alt="tekatekikota" id="imgGame" />
                 <div className="promptsContainer">
                     <Prompt

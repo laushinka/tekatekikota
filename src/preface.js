@@ -20,7 +20,7 @@ export default class Preface extends React.Component {
     render() {
         return (
             <div className="preface">
-                <img id="imgPreface" src={prefaceImg} />
+                <img id="imgPreface" src={prefaceImg} alt="logo" />
                 <p id="textPreface">
                     I had a grandfather who passed away a year ago. <br />
                     <br />
