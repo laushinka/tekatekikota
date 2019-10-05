@@ -23,7 +23,9 @@ export default class Home extends React.Component {
                 <a href="./intro">
                     <img src={homeImg} alt="Tekatekikota" id="imgHome" />
                 </a>
-                <h1 id="textHome">tap to enter</h1>
+                <a href="./intro" id="textHome" class="blink">
+                    tap to enter
+                </a>
             </div>
         );
     }
