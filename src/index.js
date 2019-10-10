@@ -38,7 +38,7 @@ export default class ScavengerHunt extends React.Component {
             "1972",
             "fatahillah",
             "tobacco",
-            "neuwkerk",
+            "nieuwkerk",
             "ciela",
             "stadhuis amsterdam",
             "sword",
